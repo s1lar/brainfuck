@@ -17,7 +17,7 @@ public class CommandVisitor implements Visitor {
     public void visit(Decrement decrement) {
         char[] data = memory.getData();
         int index = memory.getIndex();
-        data[index] = (char) ((char) (data[index] - decrement.getRepetition()) % 256);
+        data[index] = ((char) (data[index] - decrement.getRepetition()));
     }
 
 
@@ -25,7 +25,7 @@ public class CommandVisitor implements Visitor {
     public void visit(Increment increment) {
         char[] data = memory.getData();
         int index = memory.getIndex();
-        data[index] = (char) ((char) (data[index] + increment.getRepetition()) % 256);
+        data[index] = ((char) (data[index] + increment.getRepetition()));
     }
 
     @Override
